@@ -26,7 +26,6 @@ import { CurrentUserInterceptor } from './interceptors/current-user.interceptor'
 
 @Controller('auth')
 @Serialize(UserDto)
-@UseInterceptors(CurrentUserInterceptor)
 export class UsersController {
   constructor(
     private usersService: UsersService,
