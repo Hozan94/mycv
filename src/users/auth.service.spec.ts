@@ -3,23 +3,42 @@ import { AuthService } from './auth.service';
 import { UsersService } from './users.service';
 import { User } from './user.entity';
 
-it('can create an instance of auth service', async () => {
-  //Create a fake copy of users service
+describe('AuthService', () => {
+  let service: AuthService;
 
-  const fakeUsersService: Partial<UsersService> = {
-    find: () => Promise.resolve([]),
-    create: (email: string, password: string) =>
-      Promise.resolve({ id: 1, email, password } as User),
-  };
+  beforeEach(async () => {
+    //Create a fake copy of users service
+    const fakeUsersService: Partial<UsersService> = {
+      find: () => Promise.resolve([]),
+      create: (email: string, password: string) => {
+        return Promise.resolve({
+          id: 1,
+          email,
+          password,
+        } as User);
+      },
+    };
 
-  const module = await Test.createTestingModule({
-    providers: [
-      AuthService,
-      { provide: UsersService, useValue: fakeUsersService },
-    ],
-  }).compile();
+    const module = await Test.createTestingModule({
+      providers: [
+        AuthService,
+        { provide: UsersService, useValue: fakeUsersService },
+      ],
+    }).compile();
 
-  const service = module.get(AuthService);
+    service = module.get(AuthService);
+  });
 
-  expect(service).toBeDefined();
+  it('can create an instance of auth service', async () => {
+    expect(service).toBeDefined();
+  });
+
+  it('creates a new user with a salted and hashed password', async () => {
+    const user = await service.signup('asdf@asdf.com', 'asdf');
+
+    expect(user.password).not.toEqual('asdf');
+    const [slat, hash] = user.password.split('.');
+    expect(hash).toBeDefined();
+    expect(slat).toBeDefined();
+  });
 });
