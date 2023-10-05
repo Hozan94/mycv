@@ -5,6 +5,7 @@ import { User } from 'src/users/user.entity';
 export class Report {
   @PrimaryGeneratedColumn()
   id: number;
+
   @Column()
   price: number;
 

@@ -18,6 +18,11 @@ export class ReportDto {
   model: string;
   @Expose()
   mileage: number;
+
+  //If Transform() is not used,
+  //and the prop 'userId' is not found inside the entity (report.entity),
+  //this prop will not be sent back in the outgoing response
+
   @Transform(({ obj }) => obj.user.id)
   @Expose()
   userId: number;
