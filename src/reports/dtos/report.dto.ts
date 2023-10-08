@@ -18,6 +18,8 @@ export class ReportDto {
   model: string;
   @Expose()
   mileage: number;
+  @Expose()
+  approved: boolean;
 
   //If Transform() is not used,
   //and the prop 'userId' is not found inside the entity (report.entity),
