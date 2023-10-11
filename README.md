@@ -1,3 +1,54 @@
+# Nest.js Project - Udemy Tutorial
+
+This project is a result of completing a Nest.js tutorial from Udemy. The tutorial was instructed by Stephen Grider, and it provided hands-on experience with Nest.js and related technologies. The purpose of sharing this project on GitHub is to showcase the skills and knowledge gained through the course.
+
+## Course Details
+
+- **Course Name:** NestJS: The Complete Developer's Guide
+- **Instructor:** Stephen Grider
+- **Link to Course:** <https://www.udemy.com/course/nestjs-the-complete-developers-guide/>
+
+## Project Description
+
+This Nest.js project was built following the tutorial lessons and exercises provided in the Udemy course. It covers various aspects of Nest.js, including:
+
+* Dependency injection
+* Automatic validation of incoming requests
+* Formatting outgoing response data with a custom DTO system
+* Handling incoming requests and outgoing responses using Guards and Interceptors
+* Storing and retrieving data with complex queries using TypeORM
+* Data relationships in TypeORM
+* Declarative code using property, method, and parameter decorators
+* Authentication/Authorization
+* Testing
+* Nest internals
+* Database migrations
+* Production Deployment
+
+The project serves as a practical demonstration of the concepts taught in the course.
+
+Please note that this project is not an original creation but a learning exercise based on the Udemy tutorial. Feel free to explore the code and use it as a reference for your own learning journey.
+
+## Getting Started
+
+To run this project locally and explore the code:
+
+1. Clone the repository to your local machine.
+2. Follow the installation and setup instructions provided in the Udemy course materials or [below](#Installation).
+
+
+## Acknowledgments
+
+I would like to express my gratitude to @StephenGrider for creating the Udemy course and providing valuable insights into Nest.js development.
+
+## Disclaimer
+
+This project is a result of following an online tutorial and is intended for educational purposes. It may not represent an original work or production-ready code.
+
+Feel free to reach out if you have any questions or feedback related to this project.
+
+---
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
